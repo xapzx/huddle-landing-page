@@ -37,8 +37,8 @@ main {
 }
 
 .product-img {
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    /* height: auto; */
     min-width: 400px;
 }
 
@@ -69,8 +69,24 @@ main {
     position: absolute;
     align-self: end;
     bottom: 50px;
+    display: flex;
+    gap: 1rem;
 }
 
 .socials > img {
-    width: 50px;
+    width: 45px;
+}
+
+@media screen and (max-width: 660px) {
+    main {
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .product-img {
+        width: 100vw;
+        height: auto;
+        min-width: 400px;
+    }
 }
