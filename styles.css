@@ -9,10 +9,26 @@
 }
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 19px;
+    background-color: var(--violet);
+    background-image: url(images/bg-desktop.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    padding: 4rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
 }
 
 h2 {
@@ -20,26 +36,14 @@ h2 {
 }
 
 main {
-    background-color: var(--violet);
-    background-image: url(images/bg-desktop.svg);
-    background-size: auto;
-    background-repeat: no-repeat;
-    height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-    padding: 4rem;
 }
 
-.logo {
-    margin-bottom: 4.3rem;
-    width: 30%;
-}
-
-.product-img {
-    /* width: 100%; */
-    /* height: auto; */
-    min-width: 400px;
+.left {
+    display: flex;
+    justify-content: center;
 }
 
 .right {
@@ -47,6 +51,11 @@ main {
     flex-direction: column;
     justify-content: center;
     color: white;
+    gap: 2rem;
+}
+
+.right > p {
+    margin: 0;
 }
 
 .right > h2 {
@@ -65,19 +74,30 @@ main {
     box-shadow: 4px 4px 24px -8px black;
 }
 
+.right > button:hover {
+    background-color: var(--soft-magenta);
+    color: white;
+}
+
 .socials {
-    position: absolute;
+    /* position: absolute; */
     align-self: end;
-    bottom: 50px;
+    /* bottom: 50px; */
     display: flex;
     gap: 1rem;
+    margin-top: auto;
 }
 
 .socials > img {
     width: 45px;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 1200px) {
+    body {
+        background-image: url(images/bg-mobile.svg);
+        padding: 3rem;
+    }
+
     main {
         height: 100%;
         grid-template-columns: 1fr;
@@ -85,8 +105,34 @@ main {
     }
 
     .product-img {
-        width: 100vw;
+        width: 100%;
         height: auto;
-        min-width: 400px;
+        max-width: 706px;
+    }
+
+    .right {
+        text-align: center;
+        align-items: center;
+    }
+
+    .right > h2 {
+        font-family: var(--heading-font);
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .socials {
+        position: static;
+        bottom: auto;
+        align-self: center;
+        display: flex;
+        justify-self: end;
+        gap: 1rem;
+        padding-bottom: 3rem;
+        margin-top: none;
+    }
+
+    .socials > img {
+        width: 35px;
     }
 }
